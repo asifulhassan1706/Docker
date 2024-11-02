@@ -1,0 +1,17 @@
+version: '3'
+services:
+  ng1:
+    image: nginx:latest
+    container_name: ng1
+    ports:
+      - "9090:80"
+    volumes:
+      - ./vol:/usr/share/nginx/html
+
+  ng2:
+    image: nginx:latest
+    container_name: ng2
+    ports:
+      - "8080:80"
+    volumes:
+      - ./vol:/usr/share/nginx/html
