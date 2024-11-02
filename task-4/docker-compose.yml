@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # MySQL Service
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: example_root_password
+      MYSQL_DATABASE: wordpress_db
+      MYSQL_USER: wordpress_user
+      MYSQL_PASSWORD: example_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - wp_network
+
+  # WordPress Service
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    environment:
+      WORDPRESS_DB_HOST: mysql_db:3306
+      WORDPRESS_DB_NAME: wordpress_db
+      WORDPRESS_DB_USER: wordpress_user
+      WORDPRESS_DB_PASSWORD: example_password
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+      - wp_network
+
+# Named Volume for MySQL Data Persistence
+volumes:
+  mysql_data:
+
+# Network for Communication
+networks:
+  wp_network:
