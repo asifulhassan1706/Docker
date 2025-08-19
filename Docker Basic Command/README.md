@@ -1,6 +1,6 @@
 # 🐳 Docker Commands Cheatsheet
 
-এটি একটি **Docker Commands Cheatsheet** যেখানে Docker এর সব বেসিক এবং গুরুত্বপূর্ণ কমান্ড step-by-step দেওয়া আছে।
+এটি একটি **Docker Commands Cheatsheet** যেখানে Docker এর সব Basic এবং গুরুত্বপূর্ণ Command step-by-step দেওয়া আছে।
 
 
 ## 🔹 Docker Service Management
