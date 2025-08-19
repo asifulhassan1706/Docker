@@ -138,6 +138,9 @@ docker run -v "/local/path:/container/path" "image_name"
 # Create custom network  
 docker network create "network_name"  
 
+# remove network
+docker network rm "network name"
+
 # List networks  
 docker network ls  
 
