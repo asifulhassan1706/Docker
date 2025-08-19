@@ -125,6 +125,15 @@ docker volume ls
 # Create volume  
 docker volume create "volume_name"  
 
+#Anonymous Volume
+docker run -v MOUNT_PATH
+
+#Named Volume
+docker run -v VOL_NAME:CONT_DIR
+
+#Bind Mount
+docker run -v HOST_DIR:CONT_DIR
+
 # Mount volume in container  
 docker run -v "volume_name:/path" "image_name"  
 
